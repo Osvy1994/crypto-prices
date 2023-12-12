@@ -1,9 +1,9 @@
-import "./MarketUpdate.css"
+import "./MarketUpdate.css";
 
 export function MarketUpdate() {
   return (
     <div className="market-section">
-      Market Update
+      <h2>Market Update</h2>
     </div>
-  )
+  );
 }

@@ -11,7 +11,7 @@ export function NavbarComp() {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
 
-      if (currentScrollPos <= 150) {
+      if (currentScrollPos <= 400) {
         setAtTop(true);
       } else {
         setAtTop(false);
@@ -32,7 +32,7 @@ export function NavbarComp() {
     position: "fixed",
     top: "0",
     width: "100%",
-    background: atTop ? "transparent" : "#0f051d",
+    background: atTop ? "#130749" : "#0f051d",
     zIndex: "1000",
   };
 

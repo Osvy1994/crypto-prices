@@ -1,10 +1,13 @@
 .hero-crypto-icons-text {
   display: flex;
   flex-direction: row;
-  font-size: 2rem;
   justify-content: center;
   align-items: center;
   gap: 10px;
+}
+
+.hero-crypto-icons-text h3 {
+  font-size: 1.4rem;
 }
 
 .hero-crypto-icons {
@@ -17,7 +20,7 @@
 }
 
 .hero-crypto-icons p {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .green-text {

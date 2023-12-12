@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Col } from "react-bootstrap";
-import "./CoinSlider.css"
+import "./CoinSlider.css";
 
 export function CoinSlider({ coinData }) {
   const {
