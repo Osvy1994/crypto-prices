@@ -7,7 +7,7 @@ import { cryptoData } from "../mocks/mock";
 
 export function MarketUpdate() {
   return (
-    <div className="market-section">
+    <div id="market" className="market-section">
       <h1>Market Update</h1>
       <table className="coin-info-container">
         <thead>

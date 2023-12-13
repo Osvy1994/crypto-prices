@@ -4,7 +4,7 @@ import { Wallet } from "react-bootstrap-icons";
 
 export function AboutUs() {
   return (
-    <Container className="about-section">
+    <Container id="choose" className="about-section">
       <Row>
         <Col className="about-title-container">
           <h1>
@@ -83,7 +83,7 @@ export function AboutUs() {
         </Col>
       </Row>
       <Row>
-        <Col className="about-title-container about-join-container">
+        <Col id="join" className="about-title-container about-join-container">
           <h1>
             <span className="floating-icon-btc">
               <img

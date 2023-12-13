@@ -31,6 +31,7 @@ export function useCryptoData() {
         setServerError(true);
       }
     };
+    console.log("useEffect");
     fetchData();
 
     return () => {

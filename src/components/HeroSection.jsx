@@ -10,7 +10,7 @@ export function HeroSection() {
   const { cryptoData, isLoading, serverError } = useCryptoData();
 
   return (
-    <div className="hero-section">
+    <div id="home" className="hero-section">
       <Container className="hero-section-container">
         <Row>
           <Col className="hero-title">

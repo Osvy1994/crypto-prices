@@ -37,7 +37,7 @@ export function NavbarComp() {
   };
 
   return (
-    <Navbar expand="md" className="navbar-dark" style={navbarStyle}>
+    <Navbar collapseOnSelect expand="md" className="navbar-dark" style={navbarStyle}>
       <Container className="navbar-container">
         <Navbar.Brand className="project-title" href="#home">
           COINDOM
@@ -63,7 +63,7 @@ export function NavbarComp() {
           <Nav className="links-container">
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#market">Market</Nav.Link>
-            <Nav.Link href="#choose-us">Choose Us</Nav.Link>
+            <Nav.Link href="#choose">Choose Us</Nav.Link>
             <Nav.Link href="#join">Join</Nav.Link>
           </Nav>
         </Navbar.Collapse>
