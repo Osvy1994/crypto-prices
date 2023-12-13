@@ -37,7 +37,8 @@ export function HeroSection() {
         <Row>
           {serverError ? (
             <Col className="server-error">
-              <p>Server Error 😒. This is a Beta Server!!!</p>
+              <p>Server Error 😒</p>
+              <p>It is a Beta Server!!!</p>
             </Col>
           ) : isLoading ? (
             <Col className="loading">

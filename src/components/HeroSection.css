@@ -53,6 +53,7 @@
 .server-error {
   height: 180px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
