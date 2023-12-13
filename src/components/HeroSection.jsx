@@ -1,32 +1,13 @@
-import { useEffect, useState } from "react";
 import "./HeroSection.css";
 import { Container, Row, Col } from "react-bootstrap";
 import { CoinSlider } from "./CoinSlider";
-import { mockCryptoData } from "../mocks/mock";
+import { useCryptoData } from "../hooks/useCryptoData";
+
+//Add an input to search coin
 
 export function HeroSection() {
-  const [cryptoData, setCryptoData] = useState(null);
-
-  /* useEffect(() => {
-    async function fetchData() {
-      const url =
-        "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Ctether%2Cbnb%2Cxrp%2Csolana%2Cusdc%2Ccardano%2Cdogecoin&vs_currencies=usd&include_market_cap=true&include_24hr_vol=false&include_24hr_change=true&precision=0";
-      const options = {
-        method: "GET",
-        headers: {
-          "X-RapidAPI-Key":
-            "28509f430emsh2581ea19cf6cc2ap1ac7f0jsndb28dcae8ae4",
-          "X-RapidAPI-Host": "coingecko.p.rapidapi.com",
-        },
-      };
-      const response = await fetch(url, options);
-      const result = await response.json();
-      setCryptoData(result);
-    }
-    fetchData();
-  }, []); */
-
-  const coinIds = ["bitcoin", "ethereum", "tether", "solana"];
+  const coinIds = ["bitcoin", "ethereum", "tether", "binancecoin"];
+  const { cryptoData, isLoading, serverError } = useCryptoData();
 
   return (
     <div className="hero-section">
@@ -54,17 +35,25 @@ export function HeroSection() {
           </Col>
         </Row>
         <Row>
-          {coinIds.map((coin) => {
-            const coinData = mockCryptoData.find(
-              (crypto) => crypto.id === coin
-            );
+          {serverError ? (
+            <Col className="server-error">
+              <p>Server Error 😒. This is a Beta Server!!!</p>
+            </Col>
+          ) : isLoading ? (
+            <Col className="loading">
+              <p>Loading...</p>
+            </Col>
+          ) : (
+            coinIds.map((coin) => {
+              const coinData = cryptoData.find((crypto) => crypto.id === coin);
 
-            return (
-              <Col key={coin}>
-                <CoinSlider coinData={coinData} />
-              </Col>
-            );
-          })}
+              return (
+                <Col key={coin}>
+                  {coinData && <CoinSlider coinData={coinData} />}
+                </Col>
+              );
+            })
+          )}
         </Row>
       </Container>
     </div>

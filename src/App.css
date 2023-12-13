@@ -7,3 +7,11 @@
 .App {
   background-color: #0f051d;
 }
+
+.green-text {
+  color: rgb(15, 180, 15);
+}
+
+.red-text {
+  color: red;
+}
