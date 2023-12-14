@@ -40,10 +40,10 @@
 
 .loading {
   font-size: 4rem;
-  margin-top: 200px;
   animation: loadAnimation 2s infinite;
   max-width: 350px;
   margin: 200px auto;
+  text-align: center;
 }
 
 .loading p {

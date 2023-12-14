@@ -1,11 +1,14 @@
 import "./MarketUpdate.css";
 import { CoinInfo } from "./CoinInfo";
-import { cryptoData } from "../mocks/mock";
+import { useCryptoData } from "../hooks/useCryptoData";
 
 //add routes
 //sort coins
+//server error here is a preview
 
 export function MarketUpdate() {
+  const { cryptoData, isLoading } = useCryptoData();
+
   return (
     <div id="market" className="market-section">
       <h1>Market Update</h1>
@@ -26,6 +29,13 @@ export function MarketUpdate() {
           ))}
         </tbody>
       </table>
+      {isLoading ? (
+        <div className="loading">
+          <p>Loading...</p>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }
