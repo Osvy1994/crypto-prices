@@ -1,13 +1,34 @@
 import "./MarketUpdate.css";
 import { CoinInfo } from "./CoinInfo";
 import { useCryptoData } from "../hooks/useCryptoData";
+import { useState } from "react";
 
 //add routes
 //sort coins
-//server error here is a preview
 
 export function MarketUpdate() {
-  const { cryptoData, isLoading } = useCryptoData();
+  const { cryptoData, isLoading, currentPage, setCurrentPage } =
+    useCryptoData();
+
+  const scrollMarket = () => {
+    window.scrollTo({
+      top: window.scrollY - 800,
+      behavior: "smooth",
+    });
+  };
+
+  const paginationButtons = [];
+  for (let i = 1; i <= 5; i++) {
+    paginationButtons.push(
+      <button
+        key={i}
+        onClick={() => setCurrentPage(i)}
+        className={i === currentPage ? "active-page" : ""}
+      >
+        {i}
+      </button>
+    );
+  }
 
   return (
     <div id="market" className="market-section">
@@ -36,6 +57,9 @@ export function MarketUpdate() {
       ) : (
         ""
       )}
+      <div className="pagination-buttons" onClick={scrollMarket}>
+        {paginationButtons}
+      </div>
     </div>
   );
 }

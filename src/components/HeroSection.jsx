@@ -2,6 +2,7 @@ import "./HeroSection.css";
 import { Container, Row, Col } from "react-bootstrap";
 import { CoinSlider } from "./CoinSlider";
 import { useCryptoData } from "../hooks/useCryptoData";
+import { useEffect } from "react";
 
 //Add an input to search coin
 
