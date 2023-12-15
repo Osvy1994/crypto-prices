@@ -42,7 +42,7 @@ export function useCryptoData() {
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [url]);
 
-  return { cryptoData, isLoading, serverError };
+  return { cryptoData, isLoading, serverError, currentPage, setCurrentPage };
 }
