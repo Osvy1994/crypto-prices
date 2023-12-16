@@ -37,7 +37,12 @@ export function NavbarComp() {
   };
 
   return (
-    <Navbar collapseOnSelect expand="md" className="navbar-dark" style={navbarStyle}>
+    <Navbar
+      collapseOnSelect
+      expand="md"
+      className="navbar-dark"
+      style={navbarStyle}
+    >
       <Container className="navbar-container">
         <Navbar.Brand className="project-title" href="#home">
           COINDOM

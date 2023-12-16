@@ -46,6 +46,32 @@ tbody tr {
   margin-right: 25px;
 }
 
+.pagination-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 40px;
+}
+
+.pagination-buttons button {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: black;
+  border: 2px solid black;
+}
+
+.active-page {
+  background: linear-gradient(25deg, #2600fc, #ff00ea);
+  color: #fff !important;
+}
+
+.order-buttons button {
+  background-color: #2600fc;
+  display: flex;
+}
+
 @media screen and (max-width: 1200px) {
   table {
     width: 700px;
