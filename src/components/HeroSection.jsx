@@ -1,47 +1,13 @@
 import "./HeroSection.css";
 import { Container, Row, Col } from "react-bootstrap";
 import { CoinSlider } from "./CoinSlider";
-import { useState, useEffect } from "react";
-import { config } from "../../config.js";
+import { useCryptoData } from "../hooks/useCryptoData.js";
+
 //Add an input to search coin
 
 export function HeroSection() {
-  const coinIds = ["bitcoin", "ethereum", "tether", "binancecoin"];
-  const [cryptoData, setCryptoData] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [serverError, setServerError] = useState(false);
-
-  const SERVER_ERROR_MESSAGE = "Server Error!!!";
-  const url = `https://coingecko.p.rapidapi.com/coins/markets?vs_currency=usd&page=1&per_page=10&order=market_cap_desc`;
-
-  useEffect(() => {
-    let isMounted = true;
-
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url, config);
-        if (!response.ok) {
-          throw new Error(SERVER_ERROR_MESSAGE);
-        }
-        const result = await response.json();
-
-        if (isMounted) {
-          setCryptoData(result);
-          setIsLoading(false);
-        }
-      } catch (err) {
-        console.error(`Error fetching crypto data: ${err.message}`);
-        setServerError(true);
-        setIsLoading(false);
-      }
-    };
-    console.log("useEffect");
-    fetchData();
-
-    return () => {
-      isMounted = false;
-    };
-  }, []);
+  const coinIds = ["Bitcoin", "Ethereum", "Cardano", "BNB"];
+  const { cryptoData, isLoading } = useCryptoData();
 
   return (
     <div id="home" className="hero-section">
@@ -70,19 +36,14 @@ export function HeroSection() {
             </Col>
           </Row>
           <Row>
-            {serverError ? (
-              <Col className="server-error">
-                <p>Server Error 😒</p>
-                <p>It is a Beta Server!!!</p>
-              </Col>
-            ) : isLoading ? (
+            {isLoading ? (
               <Col className="loading">
                 <p>Loading...</p>
               </Col>
             ) : (
               coinIds.map((coin) => {
                 const coinData = cryptoData.find(
-                  (crypto) => crypto.id === coin
+                  (crypto) => crypto.name === coin
                 );
 
                 return (

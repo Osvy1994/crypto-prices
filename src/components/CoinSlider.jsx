@@ -3,27 +3,23 @@ import { Col } from "react-bootstrap";
 import "./CoinSlider.css";
 
 export function CoinSlider({ coinData }) {
-  const {
-    image,
-    name,
-    price_change_percentage_24h: priceChange,
-    current_price: currentPrice,
-  } = coinData;
+  const { name, iconUrl, price, change } = coinData;
 
-  const toDecimal = (number) => {
-    return number.toFixed(2);
+  const toDecimal = (num) => {
+    let newNum = parseFloat(num);
+    return newNum.toFixed(2);
   };
 
   return (
     <Col className="hero-crypto-icons">
-      <img src={image} alt={`${name} icon`} />
+      <img src={iconUrl} alt={`${name} icon`} />
       <span className="hero-crypto-icons-text">
         <h3>{name}</h3>
-        <h3 className={priceChange >= 0 ? "green-text" : "red-text"}>
-          {toDecimal(priceChange)}%
+        <h3 className={change >= 0 ? "green-text" : "red-text"}>
+          {toDecimal(change)}%
         </h3>
       </span>
-      <p>$ {toDecimal(currentPrice)}</p>
+      <p>$ {toDecimal(price)}</p>
     </Col>
   );
 }
