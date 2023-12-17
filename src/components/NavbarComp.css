@@ -14,8 +14,9 @@
 }
 
 .links-icons-container {
-  max-width: 100px;
+  max-width: 200px;
   display: flex;
+  justify-content: end;
   gap: 20px;
   order: 2;
 }
@@ -29,8 +30,6 @@
 .project-title {
   font-size: 30px;
 }
-
-
 
 @media screen and (max-width: 768px) {
   .links-icons-container {

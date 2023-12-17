@@ -45,7 +45,7 @@ export function NavbarComp() {
     >
       <Container className="navbar-container">
         <Navbar.Brand className="project-title" href="#home">
-          COINDOM
+          CRYPTO PRICES
         </Navbar.Brand>
         <Container id="element1" className="links-icons-container">
           <a

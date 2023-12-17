@@ -1,11 +1,12 @@
 import "./MarketUpdate.css";
 import { CoinInfo } from "./CoinInfo";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useCryptoData } from "../hooks/useCryptoData";
 import { CaretDownFill, CaretUpFill } from "react-bootstrap-icons";
 
 export function MarketUpdate() {
   const marketRef = useRef(null);
+  const [activeOrder, setActiveOrder] = useState(null);
   const {
     cryptoData,
     isLoading,
@@ -33,12 +34,13 @@ export function MarketUpdate() {
     );
   }
 
-  const handleOrderChange = (newOrderBy) => {
+  const handleOrderChange = (newOrderBy, index) => {
     setOrderDirection((prevDirection) =>
       prevDirection === "desc" ? "asc" : "desc"
     );
     setOrderBy(newOrderBy);
     setCurrentPage(0);
+    setActiveOrder(index);
   };
 
   return (
@@ -51,36 +53,42 @@ export function MarketUpdate() {
             <tr>
               <th>Coin</th>
               <th
-                className="table-head-buttons"
-                onClick={() => handleOrderChange("price")}
+                className={`table-head-buttons ${
+                  activeOrder === 0 ? "active" : "hidden"
+                }`}
+                onClick={() => handleOrderChange("price", 0)}
               >
                 Price{" "}
                 {orderDirection === "desc" ? (
-                  <CaretDownFill />
+                  <CaretDownFill width={15} />
                 ) : (
-                  <CaretUpFill />
+                  <CaretUpFill width={15} />
                 )}
               </th>
               <th
-                className="table-head-buttons"
-                onClick={() => handleOrderChange("change")}
+                className={`table-head-buttons ${
+                  activeOrder === 1 ? "active" : "hidden"
+                }`}
+                onClick={() => handleOrderChange("change", 1)}
               >
                 24h Change{" "}
                 {orderDirection === "desc" ? (
-                  <CaretDownFill />
+                  <CaretDownFill width={15} />
                 ) : (
-                  <CaretUpFill />
+                  <CaretUpFill width={15} />
                 )}
               </th>
               <th
-                className="table-head-buttons"
-                onClick={() => handleOrderChange("marketCap")}
+                className={`table-head-buttons ${
+                  activeOrder === 2 ? "active" : "hidden"
+                }`}
+                onClick={() => handleOrderChange("marketCap", 2)}
               >
                 Market Cap{" "}
                 {orderDirection === "desc" ? (
-                  <CaretDownFill />
+                  <CaretDownFill width={15} />
                 ) : (
-                  <CaretUpFill />
+                  <CaretUpFill width={15} />
                 )}
               </th>
             </tr>

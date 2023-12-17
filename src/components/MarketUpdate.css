@@ -71,12 +71,15 @@ tbody tr {
 }
 
 .table-head-buttons {
-
 }
 
 .table-head-buttons:hover {
   color: #3c1367;
   cursor: pointer;
+}
+
+.hidden svg {
+  display: none;
 }
 
 @media screen and (max-width: 1200px) {
@@ -107,5 +110,30 @@ tbody tr {
   td {
     padding: 20px 10px;
     border-collapse: collapse;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .pagination-buttons button {
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+
+  .pagination-buttons {
+    gap: 0.5rem;
+    max-width: 100%;
+  }
+
+  table {
+    max-width: 700px;
+  }
+
+  td {
+    padding: 20px 10px;
+    max-width: 270px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
