@@ -28,7 +28,6 @@ export function HeroSection() {
         if (isMounted) {
           setCryptoData(result);
           setIsLoading(false);
-          console.log(result);
         }
       } catch (err) {
         console.error(`Error fetching crypto data: ${err.message}`);
