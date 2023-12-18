@@ -7,7 +7,7 @@
   min-height: 100vh;
   margin: auto;
   text-align: center;
-  padding: 200px 20px 200px;
+  padding: 200px 20px 100px;
   font-family: "Space Grotesk", sans-serif;
 }
 
@@ -105,7 +105,4 @@
   .hero-title h1 {
     font-size: 3rem;
   }
-}
-
-@media screen and (max-width: 576px) {
 }

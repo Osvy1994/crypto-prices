@@ -11,7 +11,7 @@ export function HeroSection() {
   const [cryptoData, setcryptoData] = useState([]);
 
   const SERVER_ERROR_MESSAGE = "Server Error!!!";
-  const url = `https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=change&orderDirection=desc&limit=5&offset=0`;
+  const url = `https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=change&orderDirection=desc&limit=4&offset=0`;
 
   useEffect(() => {
     let isMounted = true;
@@ -75,7 +75,7 @@ export function HeroSection() {
             </Col>
           ) : (
             cryptoData.map((coin) => (
-              <Col key={coin.uuid}>
+              <Col xs={6} md={3} key={coin.uuid}>
                 {cryptoData && <CoinSlider coinData={coin} />}
               </Col>
             ))
