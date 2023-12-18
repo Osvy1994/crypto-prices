@@ -32,18 +32,19 @@
 }
 
 @media screen and (max-width: 768px) {
-  .links-icons-container {
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    margin-right: 10px;
-    order: 1;
-  }
-
   .navbar-container {
     display: flex;
-    justify-content: space-between;
-    align-items: end;
+    flex-direction: row;
+    padding: 20px 10px;
+    flex-wrap: nowrap;
+  }
+  
+  .links-icons-container {
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    order: 1;
+    max-width: fit-content;
   }
 
   #basic-navbar-nav {
@@ -52,5 +53,10 @@
 
   .links-container {
     text-align: center;
+  }
+
+  .project-title {
+    font-size: 1.4rem;
+    max-width: fit-content;
   }
 }

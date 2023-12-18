@@ -53,14 +53,14 @@ export function NavbarComp() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Twitter size={30} />
+            <Twitter className="nav-icon" size={30} />
           </a>
           <a
             href="https://discord.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Discord size={30} />
+            <Discord className="nav-icon" size={30} />
           </a>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
         </Container>
