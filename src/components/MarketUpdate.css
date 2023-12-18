@@ -131,9 +131,13 @@ tbody tr {
 
   td {
     padding: 20px 10px;
-    max-width: 200px;
+    max-width: 270px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  th {
+    max-width: 250px;
   }
 }
