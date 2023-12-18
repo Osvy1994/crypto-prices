@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import { Col } from "react-bootstrap";
 import "./CoinSlider.css";
 
 export function CoinSlider({ coinData }) {
@@ -11,15 +10,13 @@ export function CoinSlider({ coinData }) {
   };
 
   return (
-    <Col className="hero-crypto-icons">
+    <div className="hero-crypto-icons">
       <img src={iconUrl} alt={`${name} icon`} />
-      <span className="hero-crypto-icons-text">
-        <h3>{name}</h3>
-        <h3 className={change >= 0 ? "green-text" : "red-text"}>
-          {toDecimal(change)}%
-        </h3>
-      </span>
+      <h3>{name}</h3>
+      <h5 className={change >= 0 ? "green-text" : "red-text"}>
+        {toDecimal(change)}%
+      </h5>
       <p>$ {toDecimal(price)}</p>
-    </Col>
+    </div>
   );
 }

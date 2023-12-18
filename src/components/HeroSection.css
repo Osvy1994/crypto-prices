@@ -33,6 +33,10 @@
   color: transparent;
 }
 
+.top-gainers {
+  margin-top: 140px;
+}
+
 .floating-icon-btc {
   position: absolute;
   left: -90px;
@@ -76,6 +80,14 @@
 
 .server-error p {
   margin: 0;
+}
+
+.top-5 {
+  margin-top: 150px;
+}
+
+.top-5 h1 {
+  font-size: 3.5rem;
 }
 
 @keyframes loadAnimation {

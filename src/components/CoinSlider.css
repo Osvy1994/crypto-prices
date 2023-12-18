@@ -1,24 +1,25 @@
-.hero-crypto-icons-text {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
-.hero-crypto-icons-text h3 {
-  font-size: 1.2rem;
-}
-
 .hero-crypto-icons {
-  margin-top: 140px;
+  margin-top: 80px;
+}
+
+.hero-crypto-icons h3 {
+  font-size: 1.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  text-align: center;
+  margin: 10px auto;
 }
 
 .hero-crypto-icons img {
-  width: 90px;
+  width: 40px;
   margin-bottom: 10px;
 }
 
 .hero-crypto-icons p {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+}
+
+@media screen and (max-width: 576px) {
 }
